@@ -1,16 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>JavaScript Web Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>현재 시간</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
 </head>
 <body>
-
-    <h1>Hello, World!</h1>
+    <h1>현재 시간</h1>
+    <div id="clock"></div>
 
     <script>
-        // 자바스크립트 코드 작성
-        alert('This is JavaScript!');
-    </script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
 
+            const clockElement = document.getElementById('clock');
+            clockElement.textContent = formatTime(hours) + ':' + formatTime(minutes) + ':' + formatTime(seconds);
+        }
+
+        function formatTime(time) {
+            return time < 10 ? '0' + time : time;
+        }
+
+        // 최초 한 번 호출
+        updateClock();
+
+        // 1초마다 업데이트
+        setInterval(updateClock, 1000);
+    </script>
 </body>
 </html>
