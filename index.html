@@ -2,40 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>현재 시간</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            margin: 50px;
+        /* CSS 선택자에 인식되는 이름으로 "ticket.btn" 사용 */
+        [class="ticket\\.btn"] {
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
         }
     </style>
+    <title>Red Ticket Button</title>
 </head>
 <body>
-    <h1>현재 시간</h1>
-    <div id="clock"></div>
-
-    <script>
-        function updateClock() {
-            const now = new Date();
-            const hours = now.getHours();
-            const minutes = now.getMinutes();
-            const seconds = now.getSeconds();
-
-            const clockElement = document.getElementById('clock');
-            clockElement.textContent = formatTime(hours) + ':' + formatTime(minutes) + ':' + formatTime(seconds);
-        }
-
-        function formatTime(time) {
-            return time < 10 ? '0' + time : time;
-        }
-
-        // 최초 한 번 호출
-        updateClock();
-
-        // 1초마다 업데이트
-        setInterval(updateClock, 1000);
-    </script>
+    <!-- "ticket.btn" 클래스를 가진 빨간색 네모 박스 -->
+    <div class="ticket.btn">Click me</div>
 </body>
 </html>
